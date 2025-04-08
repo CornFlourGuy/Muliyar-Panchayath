@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muliyar Grama Panchayat - Official Website</title>
+    <style>
+        :root {
+            --primary: #e67e22;
+            --secondary: #d35400;
+            --light: #f5b041;
+            --dark: #a04000;
+            --text: #333;
+            --background: #fef5e7;
+            --card-bg: #fad7a0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        html {
+    scroll-behavior: smooth;
+}
+        /* Navigation */
+        nav {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .nav-links a.active {
+            background-color: var(--dark);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Flarge-desktop%2Fkasaragod-1713787407_c93c51162b9abb241180.webp&w=3840&q=75') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Demographics Section */
+        .demographics {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .demographics h2 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .stat-item {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-item h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--dark);
+        }
+        
+        /* Activities Section */
+        .activities {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .activities h2 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+        }
+        
+        .activity-item {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .activity-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-item .date {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        /* Popular Places */
+        .popular-places {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .popular-places h2 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+        }
+        
+        .place-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            background-color: white;
+            padding: 0.5rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .place-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .place-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 1rem;
+        }
+        
+        .place-item h3 {
+            font-size: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--light);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        /* President Profile */
+.president-profile {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.president-profile h2 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.5rem;
+}
+
+.president-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary);
+    margin: 0 auto 1rem;
+    display: block;
+}
+
+.president-name {
+    font-size: 1.2rem;
+    color: var(--dark);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.president-title {
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+/* Panchayat Description */
+.panchayat-description {
+    background-color: var(--card-bg);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border-top: 3px solid var(--primary);
+    border-bottom: 3px solid var(--primary);
+}
+
+.section-title {
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--secondary);
+}
+
+.description-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.description-content p {
+    font-size: 1.1rem;
+}
+/* Schools Section */
+.schools {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.schools h2 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.5rem;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 500;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    th, td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">Muliyar Grama Panchayat</a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#about-section" class="nav-link">About</a></li>
+                <li><a href="images.html">Images</a></li>
+                <li><a href="wards.html">Wards</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Muliyar Grama Panchayat</h1>
+            <p>Serving the community with dedication in Kasaragod District, Kerala</p>
+        </div>
+    </section>
+    <!-- Panchayat Description -->
+    <section id="about-section" class="panchayat-description">
+    <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div class="description-content">
+            <p>Muliyar Grama Panchayat, located in the picturesque Kasaragod district of Kerala, is a vibrant rural local body committed to sustainable development and community welfare. Established in 1959, our panchayat serves [number] wards with a population of over 22,000 residents. Blessed with lush greenery and rich cultural heritage, we focus on education, healthcare, infrastructure, and environmental conservation. Our administration actively implements state and central government schemes while preserving traditional values. Muliyar takes pride in its clean initiatives, agricultural projects, etc. Through participatory governance, we strive to create an empowered, self-reliant community while maintaining the unique ecological and cultural identity of our region.</p>
+        </div>
+    </div>
+</section>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Demographics Section -->
+                <section class="demographics">
+                    <h2>Demographics & Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>Total Population (2011 Census)</h3>
+                            <p>22,270</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Households</h3>
+                            <p>4,853</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Male Population</h3>
+                            <p>10,842</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Female Population</h3>
+                            <p>11,428</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Literacy Rate</h3>
+                            <p>91.3%</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Total Area</h3>
+                            <p>55.18 km²</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Activities Section -->
+                <section class="activities">
+                    <h2>Recent Activities</h2>
+                    <div class="activity-item">
+                        <h3>Water Supply Improvement Project</h3>
+                        <p class="date">January 15, 2023</p>
+                        <p>Completed pipeline extension to provide clean drinking water to 5 additional wards.</p>
+                    </div>
+                    <div class="activity-item">
+                        <h3>Ayurveda Medical Camp</h3>
+                        <p class="date">December 10, 2022</p>
+                        <p>Organized a free Ayurveda health camp in collaboration with Kasaragod Ayurveda College.</p>
+                    </div>
+                    <div class="activity-item">
+                        <h3>School Infrastructure Development</h3>
+                        <p class="date">November 25, 2022</p>
+                        <p>Inaugurated new classrooms at Government UP School, Muliyar with modern facilities.</p>
+                    </div>
+                </section><br>
+                <!-- Schools Section -->
+<section class="schools">
+    <h2>Schools in Muliyar Panchayat</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Management</th>
+                    <th>Category</th>
+                    <th>Boys</th>
+                    <th>Girls</th>
+                    <th>Teachers</th>
+                    <th>School Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1. Kalps Kotoor</td>
+                    <td>Govt Aided</td>
+                    <td>Primary Only (1-5)</td>
+                    <td>97</td>
+                    <td>77</td>
+                    <td>9</td>
+                    <td>32010300606</td>
+                </tr>
+                <tr>
+                    <td>2. Providence EMS Bovikkanam</td>
+                    <td>Unrecognized</td>
+                    <td>Primary Only (1-5)</td>
+                    <td>54</td>
+                    <td>69</td>
+                    <td>6</td>
+                    <td>32010300623</td>
+                </tr>
+                <tr>
+                    <td>3. Glps Bavikara</td>
+                    <td>Department Of Education</td>
+                    <td>Primary Only (1-5)</td>
+                    <td>28</td>
+                    <td>25</td>
+                    <td>5</td>
+                    <td>32010300614</td>
+                </tr>
+                <tr>
+                    <td>4. Sdpalps Malla</td>
+                    <td>Govt Aided</td>
+                    <td>Upper Primary (1-8)</td>
+                    <td>70</td>
+                    <td>48</td>
+                    <td>5</td>
+                    <td>32010300607</td>
+                </tr>
+                <tr>
+                    <td>5. Aups Bovikanam</td>
+                    <td>Govt Aided</td>
+                    <td>Upper Primary (1-8)</td>
+                    <td>439</td>
+                    <td>401</td>
+                    <td>40</td>
+                    <td>32010300610</td>
+                </tr>
+                <tr>
+                    <td>6. Mglc Aloor</td>
+                    <td>Private Unaided</td>
+                    <td>Primary Only (1-5)</td>
+                    <td>27</td>
+                    <td>27</td>
+                    <td>2</td>
+                    <td>32010300617</td>
+                </tr>
+                <tr>
+                    <td>7. Gvhss Iriyanni (VHSE)</td>
+                    <td>Department Of Education</td>
+                    <td>Higher Secondary (6-12)</td>
+                    <td>601</td>
+                    <td>453</td>
+                    <td>50</td>
+                    <td>32010300615</td>
+                </tr>
+                <tr>
+                    <td>8. Barhss Bovikanam</td>
+                    <td>Govt Aided</td>
+                    <td>Higher Secondary (9-12)</td>
+                    <td>450</td>
+                    <td>500</td>
+                    <td>51</td>
+                    <td>32010300616</td>
+                </tr>
+                <tr>
+                    <td>9. Saraswathi Vidyalayam</td>
+                    <td>Private Unaided</td>
+                    <td>Upper Primary (1-8)</td>
+                    <td>101</td>
+                    <td>87</td>
+                    <td>10</td>
+                    <td>32010300624</td>
+                </tr>
+                <tr>
+                    <td>10. Gups Kanathur</td>
+                    <td>Department Of Education</td>
+                    <td>Upper Primary (1-8)</td>
+                    <td>129</td>
+                    <td>106</td>
+                    <td>9</td>
+                    <td>32010300613</td>
+                </tr>
+                <tr>
+                    <td>11. Glps Mundakai</td>
+                    <td>Department Of Education</td>
+                    <td>Primary Only (1-5)</td>
+                    <td>51</td>
+                    <td>53</td>
+                    <td>4</td>
+                    <td>32010300602</td>
+                </tr>
+                <tr>
+                    <td>12. Glps Iriyanni</td>
+                    <td>Department Of Education</td>
+                    <td>Upper Primary (1-8)</td>
+                    <td>76</td>
+                    <td>71</td>
+                    <td>6</td>
+                    <td>32010300605</td>
+                </tr>
+                <tr>
+                    <td>13. Gups Muliyar Mapella</td>
+                    <td>Department Of Education</td>
+                    <td>Upper Primary (1-8)</td>
+                    <td>346</td>
+                    <td>352</td>
+                    <td>32</td>
+                    <td>32010300609</td>
+                </tr>
+                <tr>
+                    <td>14. Cralps Bepu</td>
+                    <td>Govt Aided</td>
+                    <td>Primary Only (1-5)</td>
+                    <td>37</td>
+                    <td>44</td>
+                    <td>4</td>
+                    <td>32010300604</td>
+                </tr>
+                <tr>
+                    <td>15. Thanal Buds Special School</td>
+                    <td>Private Unaided</td>
+                    <td>Secondary/Sr. Sec. (1-10)</td>
+                    <td>24</td>
+                    <td>13</td>
+                    <td>4</td>
+                    <td>32010300622</td>
+                </tr>
+                <tr>
+                    <td>16. Glps Panoor</td>
+                    <td>Department Of Education</td>
+                    <td>Primary Only (1-5)</td>
+                    <td>19</td>
+                    <td>13</td>
+                    <td>4</td>
+                    <td>32010300603</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+            </div>
+            
+            <!-- Right Column (Sidebar) -->
+            <div class="sidebar">
+                <!-- Popular Places Section -->
+                <section class="popular-places">
+                    <h2>Popular Places Nearby</h2>
+                    <div class="place-item">
+                        <img src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Flarge-desktop%2Franipuram-1723553984_8631cf5d464176da599b.webp&w=1920&q=75" alt="Ranipuram Hills">
+                        <h3>Ranipuram Hills</h3>
+                    </div>
+                    <div class="place-item">
+                        <img src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Flarge-desktop%2Fbest-preserved-fort-in-kerala-the-bekal-1727357224_1e5bfc08bfb45f8910ad.webp&w=1920&q=75" alt="Bekal Fort">
+                        <h3>Bekal Fort</h3>
+                    </div>
+                    <div class="place-item">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/c4/55/b8/ananthapura-lake-temple.jpg?w=900&h=500&s=1" alt="Ananthapura Lake Temple">
+                        <h3>Ananthapura Lake Temple</h3>
+                    </div>
+                    <div class="place-item">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/b5/d8/96/kappil-beach.jpg?w=900&h=500&s=1" alt="Kappil Beach">
+                        <h3>Kappil Beach</h3>
+                    </div>
+                    <div class="place-item">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/6d/18/bd/malom-town.jpg?w=900&h=500&s=1" alt="Malom Wildlife Sanctuary">
+                        <h3>Malom Wildlife Sanctuary</h3>
+                    </div>
+                    <div class="place-item">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/4f/79/08/view-from-lake-view-homestay.jpg?w=900&h=-1&s=1" alt="Valiyaparamba Backwaters">
+                        <h3>Valiyaparamba Backwaters</h3>
+                    </div>
+                </section>
+                <section class="president-profile">
+                    <h2>Panchayat President</h2>
+                    <img src="https://lsgkerala.gov.in/electionupdates/uploads/photos/2015118800601.jpg" alt="Mini P V" class="president-image">
+                    <div class="president-name">Mini P V</div>
+                    <div class="president-title">President, Muliyar Grama Panchayat</div>
+                </section>
+                <!-- Secretary Profile -->
+    <section class="president-profile">  <!-- Reusing same class for consistent styling -->
+    <h2>Panchayat Secretary</h2>
+    <img src="https://lsgkerala.gov.in/electionupdates/uploads/photos/2020118800801.jpg" alt="Panchayat Secretary" class="president-image">
+    <div class="president-name">A Janardhanan</div>
+    <div class="president-title">Vice President, Muliyar Grama Panchayat</div>
+</section>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="Fc-PROJECT.html#about-section">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="https://cr.lsgkerala.gov.in">Birth Certificate</a></li>
+                        <li><a href="https://tax.lsgkerala.gov.in/epayment/index.php">Property Tax</a></li>
+                        <li><a href="https://buildingpermit.lsgkerala.gov.in">Building Permits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Muliyar Grama Panchayat Office</li>
+                        <li>Kasaragod District, Kerala - 671542</li>
+                        <li>Phone: +91 4994 262222</li>
+                        <li>Email: muliyarpanchayat@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Muliyar Grama Panchayat. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
