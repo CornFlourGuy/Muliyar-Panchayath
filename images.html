@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muliyar Gallery</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <style>
+        h1 {
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 4/3;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(230, 126, 34, 0.9);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-out;
+            backdrop-filter: blur(5px);
+        }
+        
+        .gallery-item:hover .image-caption {
+            transform: translateY(0);
+        }
+        
+        .caption-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container nav-container">
+            <a href="Fc-PROJECT.html" class="logo">Muliyar Grama Panchayat</a>
+            <ul class="nav-links">
+                <li><a href="Fc-PROJECT.html">Home</a></li>
+                <li><a href="Fc-PROJECT.html#about-section">About</a></li>
+                <li><a href="images.html" class="active">Images</a></li>
+                <li><a href="wards.html">Wards</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Muliyar Panchayat Gallery</h1>
+
+        <div class="gallery-container">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="https://www.kasargodvartha.com/static/c1e/client/114096/downloaded/c52cbe9301066d3a25a624be146dc1f4.jpg?width=1280&height=720&resizemode=4" alt="Panchayat Office" class="gallery-image">
+                <div class="image-caption">
+                    <div class="caption-title">Panchayat Office</div>
+                    <p>The administrative headquarters of Muliyar Grama Panchayat</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="https://lbscek.ac.in/wp-content/uploads/2021/05/video-thumbnail.jpg" alt="College" class="gallery-image">
+                <div class="image-caption">
+                    <div class="caption-title">LBS College of Engineering</div>
+                    <p>Prestigious institution known for its excellence in technical education and innovation.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/03/68/13/16/getlstd-property-photo.jpg" alt="Temple" class="gallery-image">
+                <div class="image-caption">
+                    <div class="caption-title">Mallam Durga Parameshwari Temple</div>
+                    <p>An ancient and revered Hindu temple known for its spiritual significance and rich cultural heritage.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <img src="https://schoolwiki.in/images/thumb/6/6c/11025_2.jpg/1200px-11025_2.jpg" alt="Development Project" class="gallery-image">
+                <div class="image-caption">
+                    <div class="caption-title">GVHSS Iriyanni</div>
+                    <p>Government vocational higher secondary school dedicated to providing quality education and skill-based learning for students.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item">
+                <img src="https://www.kasargodvartha.com/static/c1e/client/114096/uploaded/209ffe5057c1b7b0149a0fdcb2a63efc.webp?width=823&height=463&resizemode=4" alt="School Program" class="gallery-image">
+                <div class="image-caption">
+                    <div class="caption-title">Bovikanam Town</div>
+                    <p>A scenic view of Bovikanam town, capturing its peaceful yet busy ambiance and surroundings.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item">
+                <img src="https://content.jdmagicbox.com/comp/kasaragod/i3/9999p4994.4994.170608225617.c6i3/catalogue/erinhipuzha-bridge-kanathur-kasaragod-ql7fzzut49-250.jpg" alt="Agriculture" class="gallery-image">
+                <div class="image-caption">
+                    <div class="caption-title">Erinhipuzha Bridge</div>
+                    <p>Erinhipuzha Bridge stands as a vital connection, offering picturesque views of the serene river flowing beneath.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="Fc-PROJECT.html">Home</a></li>
+                        <li><a href="Fc-PROJECT.html#about-section">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="https://cr.lsgkerala.gov.in">Birth Certificate</a></li>
+                        <li><a href="https://tax.lsgkerala.gov.in/epayment/index.php">Property Tax</a></li>
+                        <li><a href="https://buildingpermit.lsgkerala.gov.in">Building Permits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Muliyar Grama Panchayat Office</li>
+                        <li>Kasaragod District, Kerala - 671542</li>
+                        <li>Phone: +91 4994 262222</li>
+                        <li>Email: muliyarpanchayat@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Muliyar Grama Panchayat. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
